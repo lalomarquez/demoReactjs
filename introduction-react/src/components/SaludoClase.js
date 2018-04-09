@@ -15,6 +15,27 @@ class SaludoClase extends React.Component {
         })
     }
 
+    tick() {
+        this.setState({
+          date: new Date()
+        });
+      }
+
+    // componentDidMount() {
+    //     this.timerID = setInterval(
+    //         () => this.tick(),
+    //         1000
+    //       );
+    //     console.log('componentDidMount')
+    //     alert('componentDidMount')
+    // }
+  
+    // componentWillUnmount() {
+    //     clearInterval(this.timerID);
+    //     console.log('componentWillUnmount')
+    //     alert('componentWillUnmount')
+    // }
+
     render(){        
         return (<div>
             <h3>saludos {this.props.nombre}</h3>
