@@ -3,6 +3,7 @@ import UUID  from 'uuid-random'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Card,CardImg,CardBody,CardTitle,Button } from 'reactstrap'
 import store from '../Store.js'
+import actionsRedux from '../Helpers/Constant.js'
 
 class ProductList extends React.Component {
     constructor(){
@@ -25,7 +26,7 @@ class ProductList extends React.Component {
         product.idUnique = UUID()
         console.log('addProduct: ' + product.idUnique)
             store.dispatch({
-                type: 'ADD_TO_CART',
+                type: actionsRedux.ADD_TO_CART,
                 product: product
             })
     }

@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button,Table  } from 'reactstrap';
 import store from '../Store.js'
+import actionsRedux from '../Helpers/Constant.js'
 
 class ShoppingCart extends React.Component {
     constructor(){
@@ -19,12 +20,11 @@ class ShoppingCart extends React.Component {
     }
 
     RemoveItem(index){
-        debugger
-        //     console.log("D) DISPATCH: se genera el envio con la ACCION [REMOVE_FROM_CART], component [ShoppingCart]")
+        //console.log("D) DISPATCH: se genera el envio con la ACCION [REMOVE_FROM_CART], component [ShoppingCart]")
         const rows = this.state.cart;
         rows.splice(index, 1);
         store.dispatch({
-                type: 'REMOVE_FROM_CART',
+                type: actionsRedux.REMOVE_FROM_CART,
                 product: rows,
             })
     }
