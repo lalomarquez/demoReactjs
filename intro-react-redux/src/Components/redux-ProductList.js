@@ -2,8 +2,8 @@ import React from 'react'
 import UUID  from 'uuid-random'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Card,CardImg,CardBody,CardTitle,Button } from 'reactstrap'
-import store from '../Store.js'
-import actionsRedux from '../Helpers/Constant.js'
+import store from '../Helpers/Store.js'
+import {addToCart} from '../Helpers/actionCreators.js'
 
 class ProductList extends React.Component {
     constructor(){
@@ -22,13 +22,10 @@ class ProductList extends React.Component {
     }
 
     addProduct(product){            
-        //console.log("D) DISPATCH: se genera el envio con la ACCION [ADD_TO_CART], component [ProductList]")
+        //D) DISPATCH: se genera el envio con la ACCION [ADD_TO_CART], component [ProductList]
         product.idUnique = UUID()
-        console.log('addProduct: ' + product.idUnique)
-            store.dispatch({
-                type: actionsRedux.ADD_TO_CART,
-                product: product
-            })
+        console.log('addProduct: ' + product.name)
+            store.dispatch(addToCart(product))
     }
 
     render(){        

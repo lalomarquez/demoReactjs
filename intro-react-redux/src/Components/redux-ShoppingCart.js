@@ -1,8 +1,8 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button,Table  } from 'reactstrap';
-import store from '../Store.js'
-import actionsRedux from '../Helpers/Constant.js'
+import store from '../Helpers/Store.js'
+import {removeItem} from '../Helpers/actionCreators.js'
 
 class ShoppingCart extends React.Component {
     constructor(){
@@ -19,18 +19,16 @@ class ShoppingCart extends React.Component {
         })        
     }
 
-    RemoveItem(index){
+    removeFromCart(index){
         //console.log("D) DISPATCH: se genera el envio con la ACCION [REMOVE_FROM_CART], component [ShoppingCart]")
-        const rows = this.state.cart;
-        rows.splice(index, 1);
-        store.dispatch({
-                type: actionsRedux.REMOVE_FROM_CART,
-                product: rows,
-            })
+        const items = this.state.cart;
+        items.splice(index, 1);
+        console.log('removeFromCart: array[', index,']')
+        store.dispatch(removeItem(items))
     }
 
     handleClick = index => () => {
-        this.RemoveItem(index);
+        this.removeFromCart(index);
     }
 
     render(){

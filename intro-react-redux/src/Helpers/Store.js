@@ -1,5 +1,5 @@
 import { createStore} from 'redux'
-import actionsRedux from './Helpers/Constant.js'
+import actionsRedux from './Constant.js'
 
 const reducer = (state, action) =>  {
     // console.log("=== A )STORE: entra al store, valida por ACCION, genera un nuevo [STATE] y renderiza ===");
