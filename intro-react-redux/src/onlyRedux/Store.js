@@ -1,7 +1,7 @@
-import { createStore} from 'redux'
-import actionsRedux from './Constant.js'
+import { createStore } from 'redux'
+import actionsRedux from '../Helpers/Constant.js'
 
-const reducer = (state, action) =>  {
+const reducer = (state, action) => {
     // console.log("=== A )STORE: entra al store, valida por ACCION, genera un nuevo [STATE] y renderiza ===");
     // console.log(state)
     // console.log(action)
@@ -15,10 +15,10 @@ const reducer = (state, action) =>  {
         case actionsRedux.REMOVE_FROM_CART:
             return {
                 ...state,
-                cart: state.cart.filter(product => product.id !== action.product.id)                
+                cart: state.cart.filter(product => product.id !== action.product.id)
             }
         default:
             return state;
-    }  
+    }
 }
-export default createStore(reducer,{cart:[]})
+export default createStore(reducer, { cart: [] })

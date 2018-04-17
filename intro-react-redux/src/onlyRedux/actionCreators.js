@@ -10,8 +10,8 @@ const addToCart = product => {
 const removeItem = items => {
     return {
         type: actionsRedux.REMOVE_FROM_CART,
-        product: items,        
-    }    
+        product: items,
+    }
 }
 
-export {addToCart,removeItem}
+export { addToCart, removeItem }
