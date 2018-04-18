@@ -2,8 +2,8 @@ import React from 'react'
 import UUID from 'uuid-random'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap'
-import store from '../onlyRedux/Store.js'
-import { addToCart } from '../onlyRedux/actionCreators.js'
+import store from '../Helpers/Store.js'
+import { addToCart } from '../Helpers/actionCreators.js'
 
 class ProductList extends React.Component {
     constructor() {
