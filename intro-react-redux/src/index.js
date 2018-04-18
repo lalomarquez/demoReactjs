@@ -7,9 +7,11 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './Helpers/Store.js'
 import { Provider } from 'react-redux'
 
+// import { getUsers } from './Helpers/actionCreators.js'
+// store.dispatch(getUsers())
 
 ReactDOM.render(<Provider store={store}>
-                    <App />
-                </Provider>,
+    <App />
+</Provider>,
     document.getElementById('root'));
 registerServiceWorker();

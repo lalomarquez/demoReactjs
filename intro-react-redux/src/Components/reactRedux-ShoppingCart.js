@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         removeFromCart(product, i) {
-            console.log('INDEX[', i, '] ', 'PRODUCTO: ', product)
+            //console.log('INDEX[', i, '] ', 'PRODUCTO: ', product)
             dispatch(removeItemReactRedux(product, i))
         }
     }
