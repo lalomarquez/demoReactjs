@@ -9,7 +9,6 @@ import { Row, Col } from 'reactstrap';//Jumbotron
 import ProductList from './Components/reactRedux-ProductList.js'
 import ShoppingCart from './Components/reactRedux-ShoppingCart.js'
 
-import ChangeColor from './Components/box.js'
 class App extends Component {
   render() {
     return (
@@ -23,9 +22,6 @@ class App extends Component {
           </Col>
         </Row>
         <hr/> 
-        <Row>
-          <ChangeColor />
-        </Row>
       </div>
     );
   }
